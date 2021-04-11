@@ -7,7 +7,7 @@ class Followers extends React.Component {
 
 		return (
 			<div key={user.id}>
-            	<p><Badge variant='success'>Followers: {user.followers}</Badge></p>
+            	<h3><Badge variant='danger'>Followers: {user.followers}</Badge></h3>
 			</div>
 		)
 	}

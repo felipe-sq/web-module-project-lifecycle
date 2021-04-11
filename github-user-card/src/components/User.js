@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Card, Badge } from 'react-bootstrap';
+import { Container, Card, Badge, Image } from 'react-bootstrap';
 
 class User extends React.Component {
 
@@ -16,19 +16,34 @@ class User extends React.Component {
         const { user } = this.props;
 
         return (
-					<Container>
-						<Card bg='success' text='light' border="primary" className="mb-2" key={user.id}>
-                <Card.Img variant="top" src={user.avatar_url} alt="github profile pic"/>
+            <Container style={{ width: '30rem'}}>
+
+                <Card bg='dark' text='light' border="dark" className="mb-2" key={user.id}>
+
+                <h1><Badge variant="warning">Featured GitHub User</Badge></h1>
+
+                <Image  variant="top" src={user.avatar_url} alt="github profile pic"/>
                 <Card.Body>
-										<h1><Badge variant="secondary">Featured GitHub User</Badge></h1>
+                    {/* <h1><Badge variant="success">Featured GitHub User</Badge></h1><br /> */}
+                    
                     <Card.Subtitle as="h3">{user.name}</Card.Subtitle>
+                    
                     <Card.Text>{user.location}</Card.Text>
-                    <Card.Text>Profile: <a href={user.html_url}>{user.html_url}</a></Card.Text>
-                    <Card.Text>Following: {user.following}</Card.Text>
-                    <Card.Text>Bio: {user.bio}</Card.Text>
+
+                    <Card.Text>
+                        <Badge variant="warning">Profile: <a href={user.html_url}>{user.html_url}</a></Badge>
+                    </Card.Text>
+                    
+                    <Card.Text>
+                        <Badge variant="warning">Following: {user.following}</Badge>
+                    </Card.Text>
+                    
+                    <Card.Text>
+                        <Badge variant="warning">Bio: {user.bio}</Badge>
+                    </Card.Text>
                 </Card.Body>
-						</Card>
-					</Container>
+                </Card>
+            </Container>
         )
     }
 }
