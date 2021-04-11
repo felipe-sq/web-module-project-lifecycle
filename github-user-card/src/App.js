@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import { Container, Card } from 'react-bootstrap';
 
 import Followers from './components/Followers';
 import User from './components/User';
@@ -43,9 +44,7 @@ class App extends React.Component {
     console.log("App render")
     return (
       <div className="App">
-
         <User user={this.state.user} />
-
         <Followers user={this.state.user} fetchFollowers={this.fetchFollowers} />
       </div>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Card, Badge } from 'react-bootstrap';
 
 class User extends React.Component {
 
@@ -15,18 +16,19 @@ class User extends React.Component {
         const { user } = this.props;
 
         return (
-            <div key={user.id}>
-                <img width="300" src={user.avatar_url} alt="github profile pic"/>
-                <div>
-										<h1>Featured GitHub User</h1>
-                    <h3>{user.name}</h3>
-                    <p>{user.location}</p>
-                    <p>Profile: <a href={user.html_url}>{user.html_url}</a></p>
-                    {/* <p>Followers: {user.followers}</p> */}
-                    <p>Following: {user.following}</p>
-                    <p>Bio: {user.bio}</p>
-                </div>
-            </div>
+					<Container>
+						<Card bg='success' text='light' border="primary" className="mb-2" key={user.id}>
+                <Card.Img variant="top" src={user.avatar_url} alt="github profile pic"/>
+                <Card.Body>
+										<h1><Badge variant="secondary">Featured GitHub User</Badge></h1>
+                    <Card.Subtitle as="h3">{user.name}</Card.Subtitle>
+                    <Card.Text>{user.location}</Card.Text>
+                    <Card.Text>Profile: <a href={user.html_url}>{user.html_url}</a></Card.Text>
+                    <Card.Text>Following: {user.following}</Card.Text>
+                    <Card.Text>Bio: {user.bio}</Card.Text>
+                </Card.Body>
+						</Card>
+					</Container>
         )
     }
 }
