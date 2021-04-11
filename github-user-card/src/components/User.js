@@ -12,8 +12,21 @@ class User extends React.Component {
 
     render() {
         console.log("User render");
+        const { user } = this.props;
+
         return (
-            <div>GitHub User</div>
+            <div key={user.id}>
+                <img width="300" src={user.avatar_url} alt="github profile pic"/>
+                <div>
+										<h1>Featured GitHub User</h1>
+                    <h3>{user.name}</h3>
+                    <p>{user.location}</p>
+                    <p>Profile: <a href={user.html_url}>{user.html_url}</a></p>
+                    {/* <p>Followers: {user.followers}</p> */}
+                    <p>Following: {user.following}</p>
+                    <p>Bio: {user.bio}</p>
+                </div>
+            </div>
         )
     }
 }
