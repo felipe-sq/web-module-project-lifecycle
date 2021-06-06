@@ -10,7 +10,7 @@ import User from './components/User';
 class App extends React.Component {
   constructor() {
     super();
-    console.log("App constructor");
+    // console.log("App constructor");
     this.state = {
       followers: '',
       user: []
@@ -38,7 +38,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("App render!")
+    // console.log("App render!")
     return (
       <div className="App">
         <Container><br />
