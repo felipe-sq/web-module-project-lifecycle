@@ -1,3 +1,11 @@
 .App {
   text-align: center;
 }
+
+.search-btn {
+  width: auto;
+  margin: 10px;
+  color: white;
+  background-color: green;
+  border-radius: 4px;
+}
