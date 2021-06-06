@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import axios from 'axios';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Followers from './components/Followers';
+import User from './components/User';
+
+class App extends React.Component {
+  constructor() {
+    super();
+    console.log("App constructor");
+    this.state = {
+      followers: '',
+      user: []
+    }
+  }
+
+  render() {
+    console.log("App render!")
+    return (
+      <div className="App">
+        {/* import components here */}
+      </div>
+    )
+  }
+  
 }
 
 export default App;
